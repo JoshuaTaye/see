@@ -43,6 +43,7 @@ const partnerLogos = [
 const logoArea = 12000
 const maxHeight = 88
 const maxWidth = 240
+const slotHeight = maxHeight + 24
 
 function logoSize(width: number, height: number) {
   const ratio = width / height
@@ -56,9 +57,12 @@ export default function Marquee() {
   const logos = partnerLogos.map((logo) => {
     const size = logoSize(logo.width, logo.height)
     return (
+      // Slot height is in px (not rem) so it always fits the px-sized logo;
+      // the marquee clips anything taller than the slot.
       <div
         key={logo.file}
-        className="mx-7 flex h-24 shrink-0 items-center justify-center"
+        className="mx-7 flex shrink-0 items-center justify-center"
+        style={{ height: slotHeight }}
       >
         <Image
           src={`/partners/${logo.file}`}

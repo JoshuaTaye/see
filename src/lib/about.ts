@@ -59,6 +59,16 @@ export const board: {
     photo: "/board/tizzita-mengesha.webp",
     position: "50% 25%",
   },
-  { name: "Melat Yosef", role: "Fundraising and Resource Mobilization Lead" },
-  { name: "Nebeyit Demeke", role: "Membership Lead" },
+  {
+    name: "Melat Yosef",
+    role: "Fundraising and Resource Mobilization Lead",
+    photo: "/board/melat-yosef.webp",
+    position: "50% 25%",
+  },
+  {
+    name: "Nebeyit Demeke",
+    role: "Membership Lead",
+    photo: "/board/nebyat-demeke.webp",
+    position: "60% 25%",
+  },
 ]
