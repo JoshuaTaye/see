@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { type ReactNode } from "react"
 import Reveal from "./reveal"
+import PhotoSlideshow from "../photo-slideshow"
+import { Photo } from "@/lib/media"
 
 export default function PageHeading({
   title,
@@ -9,9 +11,10 @@ export default function PageHeading({
   children,
 }: {
   title: string
-  image?: { src: string; alt: string }
+  image?: Photo | Photo[]
   children: ReactNode
 }) {
+  const sizes = "272px"
   return (
     <section className="page-heading border-b border-line bg-surface py-12 sm:py-16">
       <div className="site-container">
@@ -41,13 +44,17 @@ export default function PageHeading({
                 aria-hidden="true"
               />
               <div className="relative aspect-4/5 overflow-hidden rounded-2xl bg-muted">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="272px"
-                  className="object-cover"
-                />
+                {Array.isArray(image) ? (
+                  <PhotoSlideshow photos={image} sizes={sizes} />
+                ) : (
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes={sizes}
+                    className="object-cover"
+                  />
+                )}
               </div>
             </Reveal>
           )}

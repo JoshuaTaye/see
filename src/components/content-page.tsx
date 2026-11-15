@@ -6,6 +6,7 @@ import {
   ContentSection,
   sectionId,
 } from "@/lib/content"
+import { Photo } from "@/lib/media"
 import { contactUrl, membershipApplicationUrl, supportUrl } from "@/lib/site"
 import Callout from "./ui/callout"
 import PageHeading from "./ui/page-heading"
@@ -135,12 +136,12 @@ function SectionCard({
 
 const heroImages = {
   join: {
-    src: "/benefits.webp",
-    alt: "The Social Enterprise Ethiopia community",
+    src: "/tabs/connect.webp",
+    alt: "A presenter speaks with SEE members at an outdoor session",
   },
   support: {
-    src: "/tabs/connect.webp",
-    alt: "Community members connecting through SEE",
+    src: "/speaker.webp",
+    alt: "A speaker addresses the SEE community in front of the We Impact We Profit banner",
   },
   resources: {
     src: "/table.webp",
@@ -156,16 +157,18 @@ export default function ContentPage({
   content,
   cta,
   grid = false,
+  image,
 }: {
   content: PageContent
   cta?: "join" | "support" | "resources" | "programs"
   grid?: boolean
+  image?: Photo | Photo[]
 }) {
   return (
     <>
       <PageHeading
         title={content.title}
-        image={cta ? heroImages[cta] : undefined}
+        image={image ?? (cta ? heroImages[cta] : undefined)}
       >
         <div className="[&>p:first-child]:text-lg [&>p:first-child]:leading-8">
           <ContentBlocks blocks={content.blocks} />

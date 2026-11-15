@@ -11,5 +11,14 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <ContentPage content={content} cta="join" />
+  return (
+    <ContentPage
+      content={content}
+      cta="join"
+      image={{
+        src: "/tabs/promote.webp",
+        alt: "Participants at a SEE MeetUp in Addis Ababa",
+      }}
+    />
+  )
 }

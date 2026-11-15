@@ -1,4 +1,4 @@
-import { values, objectives } from "@/lib/about"
+import { values, objectives, board } from "@/lib/about"
 import PageHeading from "@/components/ui/page-heading"
 import SectionHeading from "@/components/ui/section-heading"
 import InfoCard from "@/components/ui/info-card"
@@ -49,8 +49,8 @@ export default function AboutPage() {
               not-for-profit membership organization builds an inclusive
               ecosystem through critical thinking and thought leadership. SEE
               supports innovative solutions addressing societal, environmental,
-              and economic challenges, collectively impacting 15.8 million
-              Ethiopians.
+              and economic challenges, collectively impacting more than 19
+              million Ethiopians.
             </p>
             <p className="text-foreground/80">
               We provide experience-sharing, awareness-raising, and
@@ -60,10 +60,11 @@ export default function AboutPage() {
             </p>
           </div>
           <Image
-            src="/table.webp"
-            alt="Members of the Social Enterprise Ethiopia community gathered around a table"
-            width={600}
-            height={400}
+            src="/hero.webp"
+            alt="Social Enterprise Ethiopia members and partners together at a SEE event"
+            width={5958}
+            height={2367}
+            sizes="(min-width: 1024px) 600px, 100vw"
             className="h-auto w-full rounded-2xl border border-line shadow-sm"
           />
         </section>
@@ -101,16 +102,52 @@ export default function AboutPage() {
         </section>
         <section
           id="governance-board-secretariat"
-          className="card mb-16 scroll-mt-4"
+          className="mb-16 scroll-mt-4"
         >
-          <h2 className="text-primary">Governance (Board &amp; Secretariat)</h2>
-          <p className="text-foreground/80">
-            For information about SEE&apos;s Board and Secretariat, please
-            contact our team.
+          <SectionHeading
+            title="Governance (Board & Secretariat)"
+            description="SEE is guided by a board of leaders from across Ethiopia's social enterprise ecosystem."
+          />
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+            {board.map((member, index) => (
+              <Reveal key={member.name} delay={index * 40}>
+                <figure className="group">
+                  <div className="relative mb-4 aspect-4/5 overflow-hidden rounded-2xl border border-line bg-muted">
+                    {member.photo ? (
+                      <Image
+                        src={member.photo}
+                        alt={`Portrait of ${member.name}`}
+                        fill
+                        sizes="(min-width: 1024px) 180px, (min-width: 640px) 33vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        style={{ objectPosition: member.position }}
+                      />
+                    ) : (
+                      <div
+                        className="flex h-full items-center justify-center bg-primary/5 text-4xl font-semibold tracking-wide text-primary/45"
+                        aria-hidden="true"
+                      >
+                        {member.name
+                          .split(" ")
+                          .map((part) => part[0])
+                          .join("")}
+                      </div>
+                    )}
+                  </div>
+                  <p className="mb-0 font-semibold text-primary">
+                    {member.name}
+                  </p>
+                  <p className="mb-0 text-sm text-foreground/65">
+                    {member.role}
+                  </p>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+          <p className="mt-8 text-foreground/80">
+            For information about SEE&apos;s Secretariat, please{" "}
+            <a href={contactUrl}>contact our team</a>.
           </p>
-          <a href={contactUrl} className="btn-secondary inline-flex">
-            Contact Us
-          </a>
         </section>
         <section id="partners-supporters" className="mb-12 scroll-mt-4">
           <SectionHeading title="Partners & Supporters" />

@@ -26,3 +26,39 @@ export const objectives = [
     text: "We connect social enterprises with funding opportunities, provide financial literacy training, and support the development of sustainable business models that balance profit with purpose.",
   },
 ]
+
+// Board list supplied by SEE. Members without a photo show their initials;
+// add `photo` (and `position` to adjust the crop) when one is available.
+export const board: {
+  name: string
+  role: string
+  photo?: string
+  position?: string
+}[] = [
+  {
+    name: "Bruktawit Tigabu",
+    role: "Board Chairperson",
+    photo: "/board/brukty-tigabu.webp",
+    position: "50% 15%",
+  },
+  {
+    name: "Kibret Abebe",
+    role: "President",
+    photo: "/board/kibret-abebe.webp",
+    position: "60% 30%",
+  },
+  {
+    name: "Ayatam Simeneh",
+    role: "Vice President",
+    photo: "/board/ayatam.webp",
+    position: "50% 20%",
+  },
+  {
+    name: "Tizita Mengesha",
+    role: "Secretary & Events Lead",
+    photo: "/board/tizzita-mengesha.webp",
+    position: "50% 25%",
+  },
+  { name: "Melat Yosef", role: "Fundraising and Resource Mobilization Lead" },
+  { name: "Nebeyit Demeke", role: "Membership Lead" },
+]

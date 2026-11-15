@@ -71,7 +71,7 @@ export default function Home() {
           {[
             { value: "2018", label: "Year founded" },
             { value: `${members}+`, label: "Members" },
-            { value: "15.8 million", label: "Ethiopians impacted" },
+            { value: "19 million+", label: "Ethiopians impacted" },
           ].map((stat, index) => (
             <Reveal
               key={stat.label}
@@ -115,7 +115,7 @@ export default function Home() {
                 inclusive ecosystem through critical thinking and thought
                 leadership. SEE supports innovative solutions addressing
                 societal, environmental, and economic challenges, collectively
-                impacting 15.8 million Ethiopians.
+                impacting more than 19 million Ethiopians.
               </p>
 
               <p className="text-lg text-foreground/80">
@@ -236,8 +236,8 @@ export default function Home() {
             <div className="relative h-[500px] lg:h-[600px]">
               <div className="relative aspect-3/4 h-full w-full">
                 <Image
-                  src="/benefits.webp"
-                  alt="Social Enterprise Ethiopia Members"
+                  src="/speaker.webp"
+                  alt="A speaker addresses SEE members in front of the We Impact We Profit banner"
                   fill
                   className="rounded-2xl object-cover"
                 />

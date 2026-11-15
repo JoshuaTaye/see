@@ -7,6 +7,7 @@ export const aacoseUrl = "https://aacose.org/"
 export const aacoseRegistrationUrl = `${aacoseUrl}#tickets`
 
 export const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/programs", label: "Programs" },
   { href: "/members", label: "Membership" },
