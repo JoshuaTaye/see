@@ -62,8 +62,8 @@ export default function AboutPage() {
           <Image
             src="/hero.webp"
             alt="Social Enterprise Ethiopia members and partners together at a SEE event"
-            width={5958}
-            height={2367}
+            width={3840}
+            height={1526}
             sizes="(min-width: 1024px) 600px, 100vw"
             className="h-auto w-full rounded-2xl border border-line shadow-sm"
           />
